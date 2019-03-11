@@ -1,2 +1,2 @@
-# api-2
+# Perfect Week API
 PerfectWeek's web api
