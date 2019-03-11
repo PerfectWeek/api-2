@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "description": "Perfect Week's web API",
     "scripts": {
-        "start": "node src/main.js",
+        "start": "ts-node src/main.ts",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
@@ -17,6 +17,12 @@
     },
     "homepage": "https://github.com/PerfectWeek/api-2#readme",
     "dependencies": {
-        "gulp": "^4.0.0"
+        "gulp": "^4.0.0",
+        "gulp-cli": "^2.0.1"
+    },
+    "devDependencies": {
+        "@types/node": "^11.11.0",
+        "ts-node": "^8.0.3",
+        "typescript": "^3.3.3333"
     }
 }
