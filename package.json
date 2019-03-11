@@ -1,0 +1,22 @@
+{
+    "name": "perfect-week-web-api",
+    "version": "0.0.1",
+    "description": "Perfect Week's web API",
+    "scripts": {
+        "start": "node src/main.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/PerfectWeek/api-2.git"
+    },
+    "author": "PerfectWeek",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/PerfectWeek/api-2/issues"
+    },
+    "homepage": "https://github.com/PerfectWeek/api-2#readme",
+    "dependencies": {
+        "gulp": "^4.0.0"
+    }
+}
