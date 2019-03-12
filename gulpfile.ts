@@ -1,11 +1,23 @@
 import { main } from "./src/main";
+import { database_setup, database_start, database_stop, database_delete } from "./tasks/database";
 
-const defaultTask = (cb: () => void) => {
-    console.log("Gulp for PerfectWeek");
+export const setup = async () => {
+    await database_setup();
+};
 
-    main();
-
-    cb();
+export const clean = async () => {
+    await database_delete();
 }
 
-export default defaultTask;
+export const start = async () => {
+    await database_start();
+};
+
+export const stop = async () => {
+    await database_stop();
+};
+
+export default (cb: () => void) => {
+    console.log("PerfectWeek's gulp config");
+    cb();
+};
