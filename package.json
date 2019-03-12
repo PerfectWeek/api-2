@@ -1,30 +1,58 @@
 {
-    "name": "perfect-week-web-api",
-    "version": "0.0.1",
-    "description": "Perfect Week's web API",
-    "scripts": {
-        "start": "ts-node src/main.ts",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/PerfectWeek/api-2.git"
-    },
-    "author": "PerfectWeek",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/PerfectWeek/api-2/issues"
-    },
-    "homepage": "https://github.com/PerfectWeek/api-2#readme",
-    "dependencies": {
-        "dockerode": "^2.5.8",
-        "gulp": "^4.0.0",
-        "gulp-cli": "^2.0.1"
-    },
-    "devDependencies": {
-        "@types/dockerode": "^2.5.12",
-        "@types/node": "^11.11.0",
-        "ts-node": "^8.0.3",
-        "typescript": "^3.3.3333"
+  "name": "perfect-week-web-api",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Perfect Week's web API",
+  "main": "./server.js",
+  "scripts": {
+    "setup:admin": "cd admin && npm run setup",
+    "setup": "npm run setup:admin --debug --plugins",
+    "start": "node server.js",
+    "strapi": "node_modules/strapi/bin/strapi.js",
+    "lint": "node_modules/.bin/eslint api/**/*.js config/**/*.js plugins/**/*.js",
+    "postinstall": "node node_modules/strapi/lib/utils/post-install.js"
+  },
+  "devDependencies": {
+    "@types/dockerode": "^2.5.12",
+    "@types/node": "^11.11.0",
+    "ts-node": "^8.0.3",
+    "typescript": "^3.3.3333",
+    "babel-eslint": "^7.1.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-react": "^7.7.0"
+  },
+  "dependencies": {
+    "dockerode": "^2.5.8",
+    "gulp": "^4.0.0",
+    "gulp-cli": "^2.0.1",
+    "lodash": "^4.17.5",
+    "strapi": "3.0.0-alpha.24.1",
+    "strapi-hook-bookshelf": "3.0.0-alpha.24.1",
+    "strapi-hook-knex": "3.0.0-alpha.24.1",
+    "knex": "latest",
+    "pg": "7.8.2"
+  },
+  "author": {
+    "name": "mortimr",
+    "email": "",
+    "url": ""
+  },
+  "maintainers": [
+    {
+      "name": "mortimr",
+      "email": "",
+      "url": ""
     }
+  ],
+  "strapi": {
+    "packageManager": "npm",
+    "uuid": "31eef935-c5ce-4c4d-80db-5d74ff591d75"
+  },
+  "engines": {
+    "node": ">= 10.0.0",
+    "npm": ">= 6.0.0"
+  },
+  "license": "MIT"
 }

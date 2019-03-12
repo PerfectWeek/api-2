@@ -1,0 +1,17 @@
+{
+  "defaultConnection": "default",
+  "connections": {
+    "default": {
+      "connector": "strapi-hook-bookshelf",
+      "settings": {
+        "client": "postgres",
+        "host": "127.0.0.1",
+        "port": 5432,
+        "database": "perfectweek",
+        "username": "perfectweek",
+        "password": "password"
+      },
+      "options": {}
+    }
+  }
+}
