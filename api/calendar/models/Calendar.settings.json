@@ -1,0 +1,36 @@
+{
+  "connection": "default",
+  "collectionName": "calendars",
+  "info": {
+    "name": "calendar",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "name": {
+      "default": "",
+      "type": "string"
+    },
+    "users": {
+      "model": "user",
+      "via": "calendars",
+      "plugin": "users-permissions"
+    },
+    "events": {
+      "collection": "event",
+      "via": "calendar"
+    },
+    "color": {
+      "default": "",
+      "type": "string"
+    },
+    "is_group": {
+      "default": false,
+      "type": "boolean"
+    }
+  }
+}
