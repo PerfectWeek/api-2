@@ -1,0 +1,31 @@
+{
+  "connection": "default",
+  "collectionName": "groups",
+  "info": {
+    "name": "group",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "name": {
+      "default": "",
+      "type": "string"
+    },
+    "users": {
+      "collection": "user",
+      "via": "groups",
+      "dominant": true,
+      "plugin": "users-permissions"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}
