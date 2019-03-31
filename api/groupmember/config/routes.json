@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/groupmembers",
+      "handler": "Groupmember.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/groupmembers/count",
+      "handler": "Groupmember.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/groupmembers/:id",
+      "handler": "Groupmember.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/groupmembers",
+      "handler": "Groupmember.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/groupmembers/:id",
+      "handler": "Groupmember.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/groupmembers/:id",
+      "handler": "Groupmember.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

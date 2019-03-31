@@ -1,0 +1,31 @@
+{
+  "connection": "default",
+  "collectionName": "groupmembers",
+  "info": {
+    "name": "groupmember",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "group_id": {
+      "model": "group"
+    },
+    "user_id": {
+      "model": "user",
+      "plugin": "users-permissions"
+    },
+    "role": {
+      "default": "spectator",
+      "type": "enumeration",
+      "enum": [
+        "admin",
+        "actor",
+        "spectator"
+      ]
+    }
+  }
+}
