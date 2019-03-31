@@ -565,6 +565,34 @@
                 "type": "string"
               }
             }
+          },
+          "calendar": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "color": {
+                "type": "string"
+              },
+              "is_group": {
+                "type": "boolean"
+              },
+              "owner": {
+                "type": "string"
+              },
+              "events": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -573,6 +601,9 @@
           "name": {
             "type": "string",
             "default": ""
+          },
+          "calendar": {
+            "type": "string"
           }
         }
       }

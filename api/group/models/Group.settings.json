@@ -20,6 +20,9 @@
       "via": "related",
       "plugin": "upload",
       "required": false
+    },
+    "calendar": {
+      "model": "calendar"
     }
   }
 }
