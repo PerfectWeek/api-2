@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "03/31/2019 12:54:41 PM"
+    "x-generation-date": "03/31/2019 1:05:08 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3634,6 +3634,85 @@
           "is_group": {
             "type": "boolean",
             "default": false
+          },
+          "owner": {
+            "required": [
+              "id",
+              "username",
+              "email"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "calendars": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "events": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "start_time",
+                "end_time"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "start_time": {
+                  "type": "string"
+                },
+                "end_time": {
+                  "type": "string"
+                },
+                "location": {
+                  "type": "string"
+                },
+                "image": {
+                  "type": "string"
+                },
+                "calendar": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -3650,6 +3729,15 @@
           "is_group": {
             "type": "boolean",
             "default": false
+          },
+          "owner": {
+            "type": "string"
+          },
+          "events": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
@@ -3729,6 +3817,34 @@
                 "type": "string"
               }
             }
+          },
+          "calendar": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "color": {
+                "type": "string"
+              },
+              "is_group": {
+                "type": "boolean"
+              },
+              "owner": {
+                "type": "string"
+              },
+              "events": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -3758,6 +3874,9 @@
           "location": {
             "type": "string",
             "default": ""
+          },
+          "calendar": {
+            "type": "string"
           }
         }
       },
@@ -3958,6 +4077,12 @@
                 },
                 "role": {
                   "type": "string"
+                },
+                "calendars": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 }
               }
             }
@@ -4053,6 +4178,37 @@
                 }
               }
             }
+          },
+          "calendars": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "color": {
+                  "type": "string"
+                },
+                "is_group": {
+                  "type": "boolean"
+                },
+                "owner": {
+                  "type": "string"
+                },
+                "events": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
           }
         }
       },
@@ -4090,6 +4246,12 @@
           },
           "role": {
             "type": "string"
+          },
+          "calendars": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },

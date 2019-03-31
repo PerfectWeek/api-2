@@ -48,6 +48,10 @@
       "via": "users",
       "plugin": "users-permissions",
       "configurable": false
+    },
+    "calendars": {
+      "collection": "calendar",
+      "via": "owner"
     }
   },
   "collectionName": "users-permissions_user"
