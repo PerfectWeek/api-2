@@ -1,0 +1,32 @@
+{
+  "connection": "default",
+  "collectionName": "eventattendees",
+  "info": {
+    "name": "eventattendee",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "event_id": {
+      "model": "event"
+    },
+    "user_id": {
+      "model": "user",
+      "plugin": "users-permissions"
+    },
+    "status": {
+      "default": "invited",
+      "type": "enumeration",
+      "enum": [
+        "invited",
+        "going",
+        "maybe",
+        "absent"
+      ]
+    }
+  }
+}
