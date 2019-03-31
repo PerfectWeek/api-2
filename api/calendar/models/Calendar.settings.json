@@ -22,6 +22,15 @@
     "is_group": {
       "default": false,
       "type": "boolean"
+    },
+    "owner": {
+      "model": "user",
+      "via": "calendars",
+      "plugin": "users-permissions"
+    },
+    "events": {
+      "collection": "event",
+      "via": "calendar"
     }
   }
 }

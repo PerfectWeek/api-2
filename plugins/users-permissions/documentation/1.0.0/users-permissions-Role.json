@@ -602,6 +602,12 @@
                 },
                 "role": {
                   "type": "string"
+                },
+                "calendars": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 }
               }
             }

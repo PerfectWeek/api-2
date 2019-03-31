@@ -1161,6 +1161,37 @@
                 }
               }
             }
+          },
+          "calendars": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "color": {
+                  "type": "string"
+                },
+                "is_group": {
+                  "type": "boolean"
+                },
+                "owner": {
+                  "type": "string"
+                },
+                "events": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
           }
         }
       },
@@ -1198,6 +1229,12 @@
           },
           "role": {
             "type": "string"
+          },
+          "calendars": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       }
