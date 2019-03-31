@@ -39,16 +39,6 @@
       "via": "related",
       "plugin": "upload",
       "required": false
-    },
-    "calendar": {
-      "model": "calendar",
-      "via": "events"
-    },
-    "attendees": {
-      "collection": "user",
-      "dominant": true,
-      "via": "events",
-      "plugin": "users-permissions"
     }
   }
 }

@@ -15,12 +15,6 @@
       "default": "",
       "type": "string"
     },
-    "users": {
-      "collection": "user",
-      "via": "groups",
-      "dominant": true,
-      "plugin": "users-permissions"
-    },
     "image": {
       "model": "file",
       "via": "related",

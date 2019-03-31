@@ -520,63 +520,6 @@
             "type": "string",
             "default": ""
           },
-          "users": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "username",
-                "email"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "username": {
-                  "type": "string"
-                },
-                "email": {
-                  "type": "string"
-                },
-                "provider": {
-                  "type": "string"
-                },
-                "password": {
-                  "type": "string"
-                },
-                "resetPasswordToken": {
-                  "type": "string"
-                },
-                "confirmed": {
-                  "type": "boolean"
-                },
-                "blocked": {
-                  "type": "boolean"
-                },
-                "role": {
-                  "type": "string"
-                },
-                "calendars": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "events": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "groups": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          },
           "image": {
             "required": [
               "id",
@@ -630,12 +573,6 @@
           "name": {
             "type": "string",
             "default": ""
-          },
-          "users": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           }
         }
       }

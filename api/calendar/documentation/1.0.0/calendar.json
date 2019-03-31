@@ -520,103 +520,6 @@
             "type": "string",
             "default": ""
           },
-          "users": {
-            "required": [
-              "id",
-              "username",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "calendars": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "events": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "groups": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "events": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "name",
-                "start_time",
-                "end_time"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "start_time": {
-                  "type": "string"
-                },
-                "end_time": {
-                  "type": "string"
-                },
-                "location": {
-                  "type": "string"
-                },
-                "image": {
-                  "type": "string"
-                },
-                "calendar": {
-                  "type": "string"
-                },
-                "attendees": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          },
           "color": {
             "type": "string",
             "default": ""
@@ -632,15 +535,6 @@
           "name": {
             "type": "string",
             "default": ""
-          },
-          "users": {
-            "type": "string"
-          },
-          "events": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "color": {
             "type": "string",

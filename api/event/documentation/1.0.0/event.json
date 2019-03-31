@@ -584,91 +584,6 @@
                 "type": "string"
               }
             }
-          },
-          "calendar": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "users": {
-                "type": "string"
-              },
-              "events": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "color": {
-                "type": "string"
-              },
-              "is_group": {
-                "type": "boolean"
-              }
-            }
-          },
-          "attendees": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "username",
-                "email"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "username": {
-                  "type": "string"
-                },
-                "email": {
-                  "type": "string"
-                },
-                "provider": {
-                  "type": "string"
-                },
-                "password": {
-                  "type": "string"
-                },
-                "resetPasswordToken": {
-                  "type": "string"
-                },
-                "confirmed": {
-                  "type": "boolean"
-                },
-                "blocked": {
-                  "type": "boolean"
-                },
-                "role": {
-                  "type": "string"
-                },
-                "calendars": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "events": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "groups": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
           }
         }
       },
@@ -698,15 +613,6 @@
           "location": {
             "type": "string",
             "default": ""
-          },
-          "calendar": {
-            "type": "string"
-          },
-          "attendees": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           }
         }
       }

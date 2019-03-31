@@ -48,18 +48,6 @@
       "via": "users",
       "plugin": "users-permissions",
       "configurable": false
-    },
-    "calendars": {
-      "collection": "calendar",
-      "via": "users"
-    },
-    "events": {
-      "collection": "event",
-      "via": "attendees"
-    },
-    "groups": {
-      "collection": "group",
-      "via": "users"
     }
   },
   "collectionName": "users-permissions_user"
