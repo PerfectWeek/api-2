@@ -602,24 +602,6 @@
                 },
                 "role": {
                   "type": "string"
-                },
-                "calendars": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "events": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "groups": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
                 }
               }
             }
