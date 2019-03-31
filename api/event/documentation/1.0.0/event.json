@@ -599,9 +599,6 @@
               "color": {
                 "type": "string"
               },
-              "is_group": {
-                "type": "boolean"
-              },
               "owner": {
                 "type": "string"
               },

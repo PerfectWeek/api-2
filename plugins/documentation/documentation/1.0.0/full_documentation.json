@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "03/31/2019 1:49:33 PM"
+    "x-generation-date": "03/31/2019 2:20:15 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -4641,10 +4641,6 @@
             "type": "string",
             "default": ""
           },
-          "is_group": {
-            "type": "boolean",
-            "default": false
-          },
           "owner": {
             "required": [
               "id",
@@ -4735,10 +4731,6 @@
           "color": {
             "type": "string",
             "default": ""
-          },
-          "is_group": {
-            "type": "boolean",
-            "default": false
           },
           "owner": {
             "type": "string"
@@ -4841,9 +4833,6 @@
               },
               "color": {
                 "type": "string"
-              },
-              "is_group": {
-                "type": "boolean"
               },
               "owner": {
                 "type": "string"
@@ -5063,34 +5052,6 @@
                 "type": "string"
               }
             }
-          },
-          "calendar": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "color": {
-                "type": "string"
-              },
-              "is_group": {
-                "type": "boolean"
-              },
-              "owner": {
-                "type": "string"
-              },
-              "events": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              }
-            }
           }
         }
       },
@@ -5099,9 +5060,6 @@
           "name": {
             "type": "string",
             "default": ""
-          },
-          "calendar": {
-            "type": "string"
           }
         }
       },
@@ -5125,9 +5083,6 @@
                 "type": "string"
               },
               "image": {
-                "type": "string"
-              },
-              "calendar": {
                 "type": "string"
               }
             }
@@ -5450,9 +5405,6 @@
                 },
                 "color": {
                   "type": "string"
-                },
-                "is_group": {
-                  "type": "boolean"
                 },
                 "owner": {
                   "type": "string"

@@ -529,9 +529,6 @@
               },
               "image": {
                 "type": "string"
-              },
-              "calendar": {
-                "type": "string"
               }
             }
           },

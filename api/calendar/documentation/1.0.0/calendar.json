@@ -524,10 +524,6 @@
             "type": "string",
             "default": ""
           },
-          "is_group": {
-            "type": "boolean",
-            "default": false
-          },
           "owner": {
             "required": [
               "id",
@@ -618,10 +614,6 @@
           "color": {
             "type": "string",
             "default": ""
-          },
-          "is_group": {
-            "type": "boolean",
-            "default": false
           },
           "owner": {
             "type": "string"
