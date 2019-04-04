@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/groupinvites",
+      "handler": "Groupinvite.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/groupinvites/count",
+      "handler": "Groupinvite.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/groupinvites/:id",
+      "handler": "Groupinvite.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/groupinvites",
+      "handler": "Groupinvite.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/groupinvites/:id",
+      "handler": "Groupinvite.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/groupinvites/:id",
+      "handler": "Groupinvite.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
