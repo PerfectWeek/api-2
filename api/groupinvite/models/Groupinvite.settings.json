@@ -1,0 +1,31 @@
+{
+  "connection": "default",
+  "collectionName": "groupinvites",
+  "info": {
+    "name": "groupinvite",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "group_id": {
+      "model": "group"
+    },
+    "user_id": {
+      "model": "user",
+      "plugin": "users-permissions"
+    },
+    "role": {
+      "enum": [
+        "admin",
+        "actor",
+        "spectator"
+      ],
+      "default": "spectator",
+      "type": "enumeration"
+    }
+  }
+}
