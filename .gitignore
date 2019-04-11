@@ -67,3 +67,7 @@ typings/
 # Images uploads
 /public/uploads/*
 !/public/uploads/.gitkeep
+
+# Generated files
+
+/api/userrelationship/documentation/1.0.0/userrelationship.json

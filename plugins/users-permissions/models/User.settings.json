@@ -59,6 +59,14 @@
       "via": "related",
       "plugin": "upload",
       "required": false
+    },
+    "from_relationships": {
+      "collection": "userrelationship",
+      "via": "from"
+    },
+    "with_relationships": {
+      "collection": "userrelationship",
+      "via": "with"
     }
   },
   "collectionName": "users-permissions_user"
