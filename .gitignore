@@ -62,3 +62,8 @@ typings/
 
 # jetbrains ide configs
 .idea
+.vscode
+
+# Images uploads
+/public/uploads/*
+!/public/uploads/.gitkeep
