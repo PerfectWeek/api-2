@@ -29,7 +29,15 @@ module.exports = {
    */
 
   findOne: async (ctx) => {
-    return strapi.services.group.fetch(ctx.params);
+    const group = await strapi.services.group.fetch(ctx.params);
+
+    const groupMembers = await strapi.services.groupmember.fetchAll({group: group.id});
+    group.attributes.members = groupMembers.models.map(formatGroupMember);
+    await fetchUsersImages(group.attributes.members);
+
+    group.attributes.invited_members = []; // TODO: invited members
+
+    return group;
   },
 
   /**
@@ -49,7 +57,19 @@ module.exports = {
    */
 
   create: async (ctx) => {
-    return strapi.services.group.add(ctx.request.body);
+    const createdGroup = await strapi.services.group.add(ctx.request.body);
+
+    const member = await strapi.services.groupmember.add({
+      group: createdGroup.attributes.id,
+      user: ctx.state.user.id,
+      role: "admin"
+    });
+    member.relations.user.relations.image = ctx.state.user.image; // Because image isn't fetched
+
+    createdGroup.attributes.members = Array(member).map(formatGroupMember);
+    createdGroup.attributes.invited_members = []; // TODO: invited_members
+
+    return createdGroup;
   },
 
   /**
@@ -71,4 +91,30 @@ module.exports = {
   destroy: async (ctx, next) => {
     return strapi.services.group.remove(ctx.params);
   }
+};
+
+//
+// Helpers
+//
+
+const formatGroupMember = gm => {
+  return {
+    username: gm.relations.user.attributes.username,
+    id: gm.relations.user.attributes.id,
+    role: gm.attributes.role,
+    image: gm.relations.user.relations.image
+  };
+};
+
+// Because strapi does not fetch deep enough, we need to manually
+// request users to obtain their images
+const fetchUsersImages = async users => {
+  for (const user of users) {
+    const correspondingUser = await strapi.plugins['users-permissions'].services.user.fetch({
+      id: user.id
+    });
+    user.image = correspondingUser.image;
+  }
+
+  return users;
 };
