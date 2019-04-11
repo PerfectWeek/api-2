@@ -56,7 +56,7 @@ module.exports = {
       if (!user) {
         return ctx.badRequest(null, ctx.request.admin ? [{ messages: [{ id: 'Auth.form.error.invalid' }] }] : 'Identifier or password invalid.');
       }
-      
+
       if (_.get(await store.get({key: 'advanced'}), 'email_confirmation') && user.confirmed !== true) {
         return ctx.badRequest(null, ctx.request.admin ? [{ messages: [{ id: 'Auth.form.error.confirmed' }] }] : 'Your account email is not confirmed.');
       }
@@ -100,6 +100,8 @@ module.exports = {
       if (!user) {
         return ctx.badRequest(null, (error === 'array') ? (ctx.request.admin ? error[0] : error[1]) : error);
       }
+
+      createPersonnalCalendar(user);
 
       ctx.send({
         jwt: strapi.plugins['users-permissions'].services.jwt.issue(_.pick(user, ['_id', 'id'])),
@@ -196,7 +198,7 @@ module.exports = {
     settings.object = await strapi.plugins['users-permissions'].services.userspermissions.template(settings.object, {
       USER: _.omit(user.toJSON ? user.toJSON() : user, ['password', 'resetPasswordToken', 'role', 'provider'])
     });
-    
+
     try {
       // Send an email to the user.
       await strapi.plugins['email'].services.email.send({
@@ -331,6 +333,8 @@ module.exports = {
         strapi.emit('didCreateFirstAdmin');
       }
 
+      createPersonnalCalendar(user);
+
       ctx.send({
         jwt,
         user: _.omit(user.toJSON ? user.toJSON() : user, ['password', 'resetPasswordToken'])
@@ -358,4 +362,18 @@ module.exports = {
 
     ctx.redirect(settings.email_confirmation_redirection || '/');
   }
+};
+
+//
+// Helper
+//
+
+const createPersonnalCalendar = async user => {
+  const calendar = await strapi.services.calendar.add({
+    name: "Calendrier personnel",
+    owner: user.id,
+    color: "ffd2e8"
+  });
+
+  return calendar;
 };
