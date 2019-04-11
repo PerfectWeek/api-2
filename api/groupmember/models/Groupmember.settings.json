@@ -11,10 +11,10 @@
     "comment": ""
   },
   "attributes": {
-    "group_id": {
+    "group": {
       "model": "group"
     },
-    "user_id": {
+    "user": {
       "model": "user",
       "plugin": "users-permissions"
     },
