@@ -1,0 +1,74 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/userrelationships",
+      "handler": "Userrelationship.find",
+      "config": {
+        "policies": [
+          "global.isAuthenticated"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/userrelationships/count",
+      "handler": "Userrelationship.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/userrelationships/invite",
+      "handler": "Userrelationship.invite",
+      "config": {
+        "policies": [
+          "global.isAuthenticated"
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/userrelationships/respond",
+      "handler": "Userrelationship.respond",
+      "config": {
+        "policies": [
+          "global.isAuthenticated"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/userrelationships/:id",
+      "handler": "Userrelationship.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/userrelationships",
+      "handler": "Userrelationship.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/userrelationships/:id",
+      "handler": "Userrelationship.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/userrelationships/:id",
+      "handler": "Userrelationship.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

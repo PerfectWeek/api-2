@@ -1,0 +1,33 @@
+{
+  "connection": "default",
+  "collectionName": "userrelationships",
+  "info": {
+    "name": "userrelationship",
+    "description": "Relationship status with another user"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "status": {
+      "default": "",
+      "type": "enumeration",
+      "enum": [
+        "friend",
+        "request"
+      ]
+    },
+    "from": {
+      "model": "user",
+      "via": "from_relationships",
+      "plugin": "users-permissions"
+    },
+    "with": {
+      "model": "user",
+      "via": "with_relationships",
+      "plugin": "users-permissions"
+    }
+  }
+}
