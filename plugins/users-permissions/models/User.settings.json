@@ -47,11 +47,18 @@
       "model": "role",
       "via": "users",
       "plugin": "users-permissions",
-      "configurable": false
+      "configurable": false,
+      "private": true
     },
     "calendars": {
       "collection": "calendar",
       "via": "owner"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
     }
   },
   "collectionName": "users-permissions_user"
