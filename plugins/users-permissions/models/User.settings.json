@@ -67,6 +67,16 @@
     "with_relationships": {
       "collection": "userrelationship",
       "via": "with"
+    },
+    "google_provider": {
+      "default": "",
+      "type": "json",
+      "private": true
+    },
+    "facebook_provider": {
+      "default": "",
+      "type": "json",
+      "private": true
     }
   },
   "collectionName": "users-permissions_user"

@@ -40,6 +40,11 @@ module.exports = {
       return ctx.badRequest(null, [{ messages: [{ id: 'No authorization header was found' }] }]);
     }
 
+    user.synced_accounts = {
+      google: user.google_provider !== null,
+      facebook: user.facebook_provider !== null
+    };
+
     const data = _.omit(user.toJSON ? user.toJSON() : user, ['password', 'resetPasswordToken']);
 
     // Send 200 `ok`
@@ -163,7 +168,7 @@ module.exports = {
 
   destroy: async (ctx) => {
     const data = await strapi.plugins['users-permissions'].services.user.remove(ctx.params);
-    
+
     // Send 200 `ok`
     ctx.send(data);
   },
