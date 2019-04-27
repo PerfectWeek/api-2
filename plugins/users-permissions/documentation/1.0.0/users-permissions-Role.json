@@ -611,6 +611,24 @@
                 },
                 "image": {
                   "type": "string"
+                },
+                "from_relationships": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "with_relationships": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "google_provider": {
+                  "type": "json"
+                },
+                "facebook_provider": {
+                  "type": "json"
                 }
               }
             }

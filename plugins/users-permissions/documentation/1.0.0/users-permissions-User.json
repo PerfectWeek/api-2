@@ -1203,6 +1203,50 @@
                 "type": "string"
               }
             }
+          },
+          "from_relationships": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "from": {
+                  "type": "string"
+                },
+                "with": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "with_relationships": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "from": {
+                  "type": "string"
+                },
+                "with": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -1246,6 +1290,26 @@
             "items": {
               "type": "string"
             }
+          },
+          "from_relationships": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "with_relationships": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "google_provider": {
+            "type": "json",
+            "default": ""
+          },
+          "facebook_provider": {
+            "type": "json",
+            "default": ""
           }
         }
       }

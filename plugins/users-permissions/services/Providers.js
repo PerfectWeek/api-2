@@ -79,6 +79,14 @@ exports.connect = (provider, query) => {
           role: defaultRole._id || defaultRole.id
         });
 
+        // Save provider information
+        if (provider === "facebook") {
+          params.facebook_provider = profile.payload;
+        }
+        else if (provider === "google") {
+          params.google_provider = profile.payload;
+        }
+
         const createdUser = await strapi.query('user', 'users-permissions').create(params);
 
         return resolve([createdUser, null]);
@@ -152,7 +160,12 @@ const getProfile = async (provider, query, callback) => {
         } else {
           callback(null, {
             username: body.name,
-            email: body.email
+            email: body.email,
+            payload: {
+              access_token: access_token,
+              token_type: query["raw[token_type]"],
+              expires_in: query["raw[expires_in]"]
+            }
           });
         }
       });
@@ -169,7 +182,14 @@ const getProfile = async (provider, query, callback) => {
         } else {
           callback(null, {
             username: body.emails[0].value.split("@")[0],
-            email: body.emails[0].value
+            email: body.emails[0].value,
+            payload: {
+              access_token: access_token,
+              refresh_token: query.refresh_token,
+              scope: query["raw[scope]"],
+              token_type: query["raw[token_type]"],
+              expires_in: query["raw[expires_in]"]
+            }
           });
         }
       });
