@@ -25,7 +25,7 @@
       "description": "Development server"
     },
     {
-      "url": "YOUR_STAGING_SERVER",
+      "url": "https://strapi-perfect-week.herokuapp.com/",
       "description": "Staging server server"
     },
     {
