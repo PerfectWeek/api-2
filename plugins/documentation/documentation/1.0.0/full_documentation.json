@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "04/26/2019 8:59:55 PM"
+    "x-generation-date": "04/28/2019 3:43:06 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -26,7 +26,7 @@
       "description": "Development server"
     },
     {
-      "url": "YOUR_STAGING_SERVER",
+      "url": "https://strapi-perfect-week.herokuapp.com/",
       "description": "Staging server server"
     },
     {
@@ -5622,6 +5622,18 @@
               },
               "facebook_provider": {
                 "type": "json"
+              },
+              "eventattendings": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "groups": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -5658,6 +5670,12 @@
                 },
                 "calendar": {
                   "type": "string"
+                },
+                "attendees": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 }
               }
             }
@@ -5786,6 +5804,28 @@
                 }
               }
             }
+          },
+          "attendees": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "event": {
+                  "type": "string"
+                },
+                "user": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -5818,6 +5858,12 @@
           },
           "calendar": {
             "type": "string"
+          },
+          "attendees": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
@@ -5829,7 +5875,7 @@
           "id": {
             "type": "string"
           },
-          "event_id": {
+          "event": {
             "required": [
               "id",
               "name",
@@ -5860,10 +5906,16 @@
               },
               "calendar": {
                 "type": "string"
+              },
+              "attendees": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           },
-          "user_id": {
+          "user": {
             "required": [
               "id",
               "username",
@@ -5923,6 +5975,18 @@
               },
               "facebook_provider": {
                 "type": "json"
+              },
+              "eventattendings": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "groups": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -5940,10 +6004,10 @@
       },
       "NewEventattendee": {
         "properties": {
-          "event_id": {
+          "event": {
             "type": "string"
           },
-          "user_id": {
+          "user": {
             "type": "string"
           },
           "status": {
@@ -6015,6 +6079,28 @@
                 "type": "string"
               }
             }
+          },
+          "members": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "group": {
+                  "type": "string"
+                },
+                "user": {
+                  "type": "string"
+                },
+                "role": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -6023,6 +6109,12 @@
           "name": {
             "type": "string",
             "default": ""
+          },
+          "members": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
@@ -6294,6 +6386,18 @@
               },
               "facebook_provider": {
                 "type": "json"
+              },
+              "eventattendings": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "groups": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -6357,6 +6461,18 @@
               },
               "facebook_provider": {
                 "type": "json"
+              },
+              "eventattendings": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "groups": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           }
@@ -6560,6 +6676,18 @@
                 },
                 "facebook_provider": {
                   "type": "json"
+                },
+                "eventattendings": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "groups": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 }
               }
             }
@@ -6741,6 +6869,50 @@
                 }
               }
             }
+          },
+          "eventattendings": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "event": {
+                  "type": "string"
+                },
+                "user": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "group": {
+                  "type": "string"
+                },
+                "user": {
+                  "type": "string"
+                },
+                "role": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -6804,6 +6976,18 @@
           "facebook_provider": {
             "type": "json",
             "default": ""
+          },
+          "eventattendings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },

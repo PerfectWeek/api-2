@@ -20,6 +20,10 @@
       "via": "related",
       "plugin": "upload",
       "required": false
+    },
+    "members": {
+      "collection": "groupmember",
+      "via": "group"
     }
   }
 }

@@ -11,11 +11,13 @@
     "comment": ""
   },
   "attributes": {
-    "event_id": {
-      "model": "event"
+    "event": {
+      "model": "event",
+      "via": "attendees"
     },
-    "user_id": {
+    "user": {
       "model": "user",
+      "via": "eventattendings",
       "plugin": "users-permissions"
     },
     "status": {

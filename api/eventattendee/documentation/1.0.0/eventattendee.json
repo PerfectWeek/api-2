@@ -516,7 +516,7 @@
           "id": {
             "type": "string"
           },
-          "event_id": {
+          "event": {
             "required": [
               "id",
               "name",
@@ -547,10 +547,16 @@
               },
               "calendar": {
                 "type": "string"
+              },
+              "attendees": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           },
-          "user_id": {
+          "user": {
             "required": [
               "id",
               "username",
@@ -610,6 +616,18 @@
               },
               "facebook_provider": {
                 "type": "json"
+              },
+              "eventattendings": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "groups": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -627,10 +645,10 @@
       },
       "NewEventattendee": {
         "properties": {
-          "event_id": {
+          "event": {
             "type": "string"
           },
-          "user_id": {
+          "user": {
             "type": "string"
           },
           "status": {

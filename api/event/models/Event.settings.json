@@ -43,6 +43,10 @@
     "calendar": {
       "model": "calendar",
       "via": "events"
+    },
+    "attendees": {
+      "collection": "eventattendee",
+      "via": "event"
     }
   }
 }

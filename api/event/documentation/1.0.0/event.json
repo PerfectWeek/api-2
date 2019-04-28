@@ -609,6 +609,28 @@
                 }
               }
             }
+          },
+          "attendees": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "event": {
+                  "type": "string"
+                },
+                "user": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -641,6 +663,12 @@
           },
           "calendar": {
             "type": "string"
+          },
+          "attendees": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       }
