@@ -12,10 +12,12 @@
   },
   "attributes": {
     "group": {
-      "model": "group"
+      "model": "group",
+      "via": "members"
     },
     "user": {
       "model": "user",
+      "via": "groups",
       "plugin": "users-permissions"
     },
     "role": {

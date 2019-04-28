@@ -584,6 +584,18 @@
               },
               "facebook_provider": {
                 "type": "json"
+              },
+              "eventattendings": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "groups": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -620,6 +632,12 @@
                 },
                 "calendar": {
                   "type": "string"
+                },
+                "attendees": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 }
               }
             }

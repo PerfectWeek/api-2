@@ -14,10 +14,6 @@
     "group": {
       "model": "group"
     },
-    "user": {
-      "model": "user",
-      "plugin": "users-permissions"
-    },
     "role": {
       "enum": [
         "admin",
