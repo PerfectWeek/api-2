@@ -2,6 +2,22 @@
   "routes": [
     {
       "method": "GET",
+      "path": "/groups",
+      "handler": "Group.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/groups/count",
+      "handler": "Group.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
       "path": "/groups/:id",
       "handler": "Group.findOne",
       "config": {

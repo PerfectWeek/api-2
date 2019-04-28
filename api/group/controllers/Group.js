@@ -16,9 +16,9 @@ module.exports = {
 
   find: async (ctx) => {
     if (ctx.query._q) {
-      return strapi.services.group.search(ctx.query);
+      return strapi.services.group.searchOfUser(ctx.query, ctx.state.user.id);
     } else {
-      return strapi.services.group.fetchAll(ctx.query);
+      return strapi.services.group.fetchAllOfUser(ctx.query, ctx.state.user.id);
     }
   },
 
@@ -29,7 +29,7 @@ module.exports = {
    */
 
   findOne: async (ctx) => {
-    const group = await strapi.services.group.fetch(ctx.params);
+    return strapi.services.group.fetchOfUser(ctx.params, ctx.state.user.id);
 
     const groupMembers = await strapi.services.groupmember.fetchAll({group: group.id});
     group.attributes.members = groupMembers.models.map(formatGroupMember);
@@ -47,7 +47,7 @@ module.exports = {
    */
 
   count: async (ctx) => {
-    return strapi.services.group.count(ctx.query);
+    return strapi.services.group.countOfUser(ctx.query, ctx.state.user.id);
   },
 
   /**
@@ -79,7 +79,7 @@ module.exports = {
    */
 
   update: async (ctx, next) => {
-    return strapi.services.group.edit(ctx.params, ctx.request.body) ;
+    return strapi.services.group.editOfUser(ctx.params, ctx.request.body, ctx.state.user.id) ;
   },
 
   /**
@@ -89,7 +89,7 @@ module.exports = {
    */
 
   destroy: async (ctx, next) => {
-    return strapi.services.group.remove(ctx.params);
+    return strapi.services.group.removeOfUser(ctx.params, ctx.state.user.id);
   }
 };
 
