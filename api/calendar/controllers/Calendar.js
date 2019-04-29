@@ -16,9 +16,9 @@ module.exports = {
 
   find: async (ctx) => {
     if (ctx.query._q) {
-      return strapi.services.calendar.search(ctx.query);
+      return strapi.services.calendar.searchOfUser(ctx.query, ctx.state.user.id);
     } else {
-      return strapi.services.calendar.fetchAll(ctx.query);
+      return strapi.services.calendar.fetchAllOfUser(ctx.query, ctx.state.user.id);
     }
   },
 
@@ -29,7 +29,7 @@ module.exports = {
    */
 
   findOne: async (ctx) => {
-    return strapi.services.calendar.fetch(ctx.params);
+    return strapi.services.calendar.fetchOfUser(ctx.params, ctx.state.user.id);
   },
 
   /**
@@ -39,7 +39,7 @@ module.exports = {
    */
 
   count: async (ctx) => {
-    return strapi.services.calendar.count(ctx.query);
+    return strapi.services.calendar.countOfUser(ctx.query, ctx.state.user.id);
   },
 
   /**
@@ -59,7 +59,7 @@ module.exports = {
    */
 
   update: async (ctx, next) => {
-    return strapi.services.calendar.edit(ctx.params, ctx.request.body) ;
+    return strapi.services.calendar.editOfUser(ctx.params, ctx.request.body, ctx.state.user.id) ;
   },
 
   /**
@@ -69,6 +69,6 @@ module.exports = {
    */
 
   destroy: async (ctx, next) => {
-    return strapi.services.calendar.remove(ctx.params);
+    return strapi.services.calendar.removeOfUser(ctx.params, ctx.state.user.id);
   }
 };
