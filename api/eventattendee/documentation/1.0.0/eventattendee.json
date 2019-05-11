@@ -638,7 +638,8 @@
               "invited",
               "going",
               "maybe",
-              "absent"
+              "absent",
+              "admin"
             ]
           }
         }
@@ -658,7 +659,8 @@
               "invited",
               "going",
               "maybe",
-              "absent"
+              "absent",
+              "admin"
             ]
           }
         }
