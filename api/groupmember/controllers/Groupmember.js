@@ -16,9 +16,9 @@ module.exports = {
 
   find: async (ctx) => {
     if (ctx.query._q) {
-      return strapi.services.groupmember.search(ctx.query);
+      return strapi.services.groupmember.searchOfUser(ctx.query, ctx.state.user.id);
     } else {
-      return strapi.services.groupmember.fetchAll(ctx.query);
+      return strapi.services.groupmember.fetchAllOfUser(ctx.query, ctx.state.user.id);
     }
   },
 
@@ -29,7 +29,7 @@ module.exports = {
    */
 
   findOne: async (ctx) => {
-    return strapi.services.groupmember.fetch(ctx.params);
+    return strapi.services.groupmember.fetchOfUser(ctx.params, ctx.state.user.id);
   },
 
   /**
@@ -39,7 +39,7 @@ module.exports = {
    */
 
   count: async (ctx) => {
-    return strapi.services.groupmember.count(ctx.query);
+    return strapi.services.groupmember.countOfUser(ctx.query, ctx.state.user.id);
   },
 
   /**
@@ -59,7 +59,7 @@ module.exports = {
    */
 
   update: async (ctx, next) => {
-    return strapi.services.groupmember.edit(ctx.params, ctx.request.body) ;
+    return strapi.services.groupmember.editOfUser(ctx.params, ctx.request.body, ctx.state.user.id);
   },
 
   /**
@@ -69,6 +69,6 @@ module.exports = {
    */
 
   destroy: async (ctx, next) => {
-    return strapi.services.groupmember.remove(ctx.params);
+    return strapi.services.groupmember.removeOfUser(ctx.params, ctx.state.user.id);
   }
 };

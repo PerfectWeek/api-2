@@ -516,7 +516,7 @@
           "id": {
             "type": "string"
           },
-          "group_id": {
+          "group": {
             "required": [
               "id"
             ],
@@ -529,10 +529,16 @@
               },
               "image": {
                 "type": "string"
+              },
+              "members": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           },
-          "user_id": {
+          "user": {
             "required": [
               "id",
               "username",
@@ -571,6 +577,39 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "image": {
+                "type": "string"
+              },
+              "from_relationships": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "with_relationships": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "google_provider": {
+                "type": "json"
+              },
+              "facebook_provider": {
+                "type": "json"
+              },
+              "eventattendings": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "groups": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -587,10 +626,10 @@
       },
       "NewGroupmember": {
         "properties": {
-          "group_id": {
+          "group": {
             "type": "string"
           },
-          "user_id": {
+          "user": {
             "type": "string"
           },
           "role": {
