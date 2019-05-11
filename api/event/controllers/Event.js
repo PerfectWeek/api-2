@@ -16,9 +16,9 @@ module.exports = {
 
   find: async (ctx) => {
     if (ctx.query._q) {
-      return strapi.services.event.search(ctx.query);
+      return strapi.services.event.searchOfUser(ctx.query, ctx.state.user.id);
     } else {
-      return strapi.services.event.fetchAll(ctx.query);
+      return strapi.services.event.fetchAllOfUser(ctx.query, ctx.state.user.id);
     }
   },
 
@@ -29,7 +29,7 @@ module.exports = {
    */
 
   findOne: async (ctx) => {
-    return strapi.services.event.fetch(ctx.params);
+    return strapi.services.event.fetchOfUser(ctx.params, ctx.state.user.id);
   },
 
   /**
@@ -39,7 +39,7 @@ module.exports = {
    */
 
   count: async (ctx) => {
-    return strapi.services.event.count(ctx.query);
+    return strapi.services.event.countOfUser(ctx.query, ctx.state.user.id);
   },
 
   /**
@@ -59,7 +59,7 @@ module.exports = {
    */
 
   update: async (ctx, next) => {
-    return strapi.services.event.edit(ctx.params, ctx.request.body) ;
+    return strapi.services.event.editOfUser(ctx.params, ctx.request.body, ctx.state.user.id) ;
   },
 
   /**
@@ -69,6 +69,6 @@ module.exports = {
    */
 
   destroy: async (ctx, next) => {
-    return strapi.services.event.remove(ctx.params);
+    return strapi.services.event.removeOfUser(ctx.params, ctx.state.user.id);
   }
 };
