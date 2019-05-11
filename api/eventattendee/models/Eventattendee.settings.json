@@ -27,7 +27,8 @@
         "invited",
         "going",
         "maybe",
-        "absent"
+        "absent",
+        "admin"
       ]
     }
   }
