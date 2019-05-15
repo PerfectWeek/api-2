@@ -26,10 +26,10 @@
     },
     {
       "url": "https://strapi-perfect-week.herokuapp.com/",
-      "description": "Staging server server"
+      "description": "Staging server"
     },
     {
-      "url": "YOUR_PRODUCTION_SERVER",
+      "url": "http://api2.kalastud.io",
       "description": "Production server"
     }
   ],
