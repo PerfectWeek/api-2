@@ -1,0 +1,5 @@
+node_modules
+plugins/**/node_modules
+admin/node_modules
+.git
+.idea
